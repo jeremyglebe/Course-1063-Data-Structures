@@ -1,0 +1,35 @@
+<h3>Starter code for copy/paste:</h3>
+<pre style="color:#d1d1d1;background:#000000;"><span style="color:#9999a9; ">// Convenient way to use special characters, if your terminal supports it</span>
+    <span style="color:#008073; ">#</span><span style="color:#008073; ">define</span><span style="color:#008073; "> KNIGHT </span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">♞ </span><span style="color:#02d045; ">"</span>
+    <span style="color:#008073; ">#</span><span style="color:#008073; ">define</span><span style="color:#008073; "> QUEEN </span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">♕ </span><span style="color:#02d045; ">"</span>
+    <span style="color:#008073; ">#</span><span style="color:#008073; ">define</span><span style="color:#008073; "> DARK_BLOCK </span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">██</span><span style="color:#02d045; ">"</span>
+    <span style="color:#008073; ">#</span><span style="color:#008073; ">define</span><span style="color:#008073; "> LIGHT_BLOCK </span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">�'�'</span><span style="color:#02d045; ">"</span>
+    
+    <span style="color:#008073; ">#</span><span style="color:#008073; ">include </span><span style="color:#02d045; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#02d045; ">&gt;</span>
+    <span style="color:#008073; ">#</span><span style="color:#008073; ">include </span><span style="color:#02d045; ">&lt;</span><span style="color:#40015a; ">string</span><span style="color:#02d045; ">&gt;</span>
+    
+    <span style="color:#e66170; font-weight:bold; ">using</span> <span style="color:#e66170; font-weight:bold; ">namespace</span> <span style="color:#00dddd; ">std</span><span style="color:#b060b0; ">;</span>
+    
+    <span style="color:#e66170; font-weight:bold; ">struct</span> ChessPiece<span style="color:#b060b0; ">{</span>
+        <span style="color:#9999a9; ">// Must include symbol (string, char?), row, column</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#b060b0; ">;</span>
+    <span style="color:#e66170; font-weight:bold; ">struct</span> ChessBoard<span style="color:#b060b0; ">{</span>
+        <span style="color:#9999a9; ">// Must include a 2D char array and a ChessPiece</span>
+    <span style="color:#b060b0; ">}</span><span style="color:#b060b0; ">;</span>
+    <span style="color:#9999a9; ">// Functions must be prototyped/forward declared</span>
+    <span style="color:#e66170; font-weight:bold; ">void</span> printBoard<span style="color:#d2cd86; ">(</span>ChessBoard game<span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+    ChessPiece newPiece<span style="color:#d2cd86; ">(</span><span style="color:#e66170; font-weight:bold; ">string</span> symbol<span style="color:#d2cd86; ">,</span> <span style="color:#e66170; font-weight:bold; ">int</span> row<span style="color:#d2cd86; ">,</span> <span style="color:#e66170; font-weight:bold; ">int</span> col<span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+    
+    <span style="color:#9999a9; ">// If your structs and functions are made correctly,</span>
+    <span style="color:#9999a9; ">// you will NOT need to modify this main function</span>
+    <span style="color:#e66170; font-weight:bold; ">int</span> <span style="color:#e66170; font-weight:bold; ">main</span><span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span> <span style="color:#b060b0; ">{</span>
+        ChessBoard board<span style="color:#b060b0; ">;</span>
+        <span style="color:#9999a9; ">// Board with a queen</span>
+        board<span style="color:#d2cd86; ">.</span>piece <span style="color:#d2cd86; ">=</span> newPiece<span style="color:#d2cd86; ">(</span>QUEEN<span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">4</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">3</span><span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+        printBoard<span style="color:#d2cd86; ">(</span>board<span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+        <span style="color:#9999a9; ">// Board with a knight</span>
+        board<span style="color:#d2cd86; ">.</span>piece <span style="color:#d2cd86; ">=</span> newPiece<span style="color:#d2cd86; ">(</span>KNIGHT<span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">,</span> <span style="color:#008c00; ">2</span><span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+        printBoard<span style="color:#d2cd86; ">(</span>board<span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+    <span style="color:#b060b0; ">}</span>
+    </pre>
+    
