@@ -2,7 +2,7 @@
 <h2>Minor Program 1</h2>
 <p>
     <b>tl;dr</b> Students will use structs and 2D arrays to print a
-    resemblance/model of a chess board.
+    text model of a chess board.
 </p>
 
 <p>
@@ -22,6 +22,14 @@
     The students should print a few example boards/pieces, but I should easily
     be able to make and print my own in just a few lines. (see
     <code>main()</code> in the starter code at the bottom)
+</p>
+
+<p>
+    <b>Small Note:</b> I'd really like it if students would use special ascii
+    characters that resemble chess pieces (see starter code) but I know that
+    some systems have trouble displaying these characters. Students are welcome
+    to use simple characters in place of the special ones if it causes them
+    trouble, <i>it's just much less fun.</i>
 </p>
 
 <h3>Topics Required</h3>
@@ -71,3 +79,50 @@ ChessPiece newPiece<span style="color:#808030; ">(</span><span style="color:#603
 <span style="color:#800080; ">}</span>
 </pre>
 <i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
+
+<h3>Example Outputs</h3>
+<b>Output <i>with</i> special characters</b>
+<pre>
+  1 2 3 4 5 6 7 8
+1 ░░██░░██░░██░░██
+2 ██░░██░░██░░██░░
+3 ░░██░░██░░██░░██
+4 ██░░██░░██░░██░░
+5 ░░██░░♕ ░░██░░██
+6 ██░░██░░██░░██░░
+7 ░░██░░██░░██░░██
+8 ██░░██░░██░░██░░
+
+  1 2 3 4 5 6 7 8
+1 ░░██░░██░░██░░██
+2 ██░░♞ ░░██░░██░░
+3 ░░██░░██░░██░░██
+4 ██░░██░░██░░██░░
+5 ░░██░░██░░██░░██
+6 ██░░██░░██░░██░░
+7 ░░██░░██░░██░░██
+8 ██░░██░░██░░██░░
+</pre>
+
+<b>Output <i>without</i> special characters</b>
+<pre>
+ 12345678
+1 0 0 0 0
+20 0 0 0 
+3 0 0 0 0
+40 0 0 0 
+5 0 Q 0 0
+60 0 0 0 
+7 0 0 0 0
+80 0 0 0 
+
+ 12345678
+1 0 0 0 0
+20 k 0 0 
+3 0 0 0 0
+40 0 0 0 
+5 0 0 0 0
+60 0 0 0 
+7 0 0 0 0
+80 0 0 0 
+</pre>
