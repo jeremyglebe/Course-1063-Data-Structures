@@ -1,0 +1,35 @@
+<h1>(Gentle) Introduction to Strings</h1>
+<h2>Lesson 1.1</h2>
+
+<h3>Recommended Reading</h3>
+<b>Book Section 2.10</b><br>
+<i>The C++ string Class</i><br>
+(page 58 in the 10th edition)
+
+<h3>Overview</h3>
+<p>
+    <code>char</code> variables can only store a single character.
+    <b>Strings</b> refer to groups of characters, such as words/names/sentences.
+    C++ does not have a built-in string type, but it does have a
+    <code>string</code> <b>class</b> that you can include through a header file.
+    (We'll see more on classes later)
+</p>
+<p>
+    <b>Example Code:</b>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">string</span><span style="color:#800000; ">&gt;</span><span style="color:#004a43; "> </span><span style="color:#696969; ">// This is how we include the string class!</span>
+<span style="color:#800000; font-weight:bold; ">using</span> <span style="color:#800000; font-weight:bold; ">namespace</span> <span style="color:#666616; ">std</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#603000; ">string</span> username<span style="color:#800080; ">;</span> <span style="color:#696969; ">// This is how we declare a string,</span>
+                     <span style="color:#696969; ">// no different from a regular variable!</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">What is your name? </span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cin</span> <span style="color:#808030; ">&gt;</span><span style="color:#808030; ">&gt;</span> username<span style="color:#800080; ">;</span> <span style="color:#696969; ">// We can get strings from the keyboard.</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Oh, your name is </span><span style="color:#800000; ">"</span>
+            <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> username <span style="color:#696969; ">// We can print strings just like other variables.</span>
+            <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">? That's kind of funny!</span><span style="color:#0f69ff; ">\n</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>
+<i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
+</p>

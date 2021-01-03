@@ -1,0 +1,87 @@
+<h1>Functions</h1>
+<h2>Lesson 1.2</h2>
+
+<h3>Recommended Reading</h3>
+<ul>
+    <li>
+        <b>Book Section 6.2</b><br>
+        <i>Defining and Calling Functions</i><br>
+        (page 328 in the 10th edition)
+    </li>
+    <li>
+        <b>Book Section 6.3</b><br>
+        <i>Function Prototypes</i><br>
+        (page 336 in the 10th edition)
+    </li>
+    <li>
+        <b>Book Section 6.9</b><br>
+        <i>Using Functions in a Menu-Driven Program</i><br>
+        (page 355 in the 10th edition)
+    </li>
+    <li>
+        <b>Book Section 6.12</b><br>
+        <i>Default Arguments</i><br>
+        (page 368 in the 10th edition)
+    </li>
+    <li>
+        <b>Book Section 6.14</b><br>
+        <i>Overloading Functions</i><br>
+        (page 382 in the 10th edition)
+    </li>
+</ul>
+
+<h3>Overview</h3>
+<p>
+    To <b>call</b> a function is to make it execute. A function
+    <b>definition</b> is the statements that make up the function's behavior.
+    Every function has an <b>identifier</b>, <b>parameters</b>, a <b>body</b>,
+    and a <b>return type</b>
+</p>
+<p>
+    Identifiers work the same way as they do with variables. The identifier you
+    define for your function will be used to access it at other points in your
+    program.
+</p>
+<p>
+    Parameters are variables which may be sent to a function and should affect
+    the results of the function. Parameters define the type of data sent to the
+    function, whereas the actual values you choose to send it for any given call
+    are called <b>arguments</b>.
+</p>
+<p>
+    The body of the function is the group of statements found inside the
+    function's curled braces. <code>{ }</code> This makes up the bulk of the
+    function definition and it's behavior.
+</p>
+<p>
+    Functions can send back a variable to the location they were called from.
+    This is called a return. The return type, specified in the function
+    definition, is the type of variable that the function must return. If the
+    function does not return a variable, we make it's return type <b>void</b>.
+</p>
+<p>
+    Function prototypes are one-line previews of the definition. They let the
+    compiler know what the function will look like, but do not include it's
+    body. The full function, with it's body, must then be defined later. This
+    is particularly useful if you have very long functions and do not want to
+    put them at the top of your file because they would "hide"
+    <code>main()</code>.
+</p>
+<p>
+    Overloaded functions are functions which share an identifer, but do not
+    share the same type of parameters. The compiler understands that these
+    functions are different, because it actually stores a "signature" internally
+    for every function, which is a combination of both the identifier and list
+    of parameters. When using overloaded functions, the compiler will determine
+    which function you intend to use based on the arguments you pass.
+</p>
+<p>
+    It is very important to remember that the compiler expects different types
+    of parameters, not just differently named parameters. In addition, changing
+    the return type will not allow you to overload a function, it will only
+    cause errors. Overloaded functions must have different <i>parameter
+        types</i>, always.
+</p>
+<p>
+    <b>Example Code:</b> To be added later...
+</p>
