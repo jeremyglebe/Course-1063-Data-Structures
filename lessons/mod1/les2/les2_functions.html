@@ -83,5 +83,95 @@
         types</i>, always.
 </p>
 <p>
-    <b>Example Code:</b> To be added later...
+    <b>Example Code:</b>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#696969; ">// We're going to define two functions, and one of them will be overloaded</span>
+<span style="color:#696969; ">// First we'll make showInBox(), which will print a variable in a neat little</span>
+<span style="color:#696969; ">// box. Then we'll define square() which will accept an integer and return the</span>
+<span style="color:#696969; ">// number squared. showInBox() will be overloaded to print multiple types of</span>
+<span style="color:#696969; ">// variables.</span>
+
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">string</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#800000; font-weight:bold; ">using</span> <span style="color:#800000; font-weight:bold; ">namespace</span> <span style="color:#666616; ">std</span><span style="color:#800080; ">;</span>
+
+<span style="color:#696969; ">// These are the prototypes, definitions are farther down</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> n<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#696969; ">// Note that we have overloaded these functions, they all have the same name!</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">double</span> d<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#696969; ">// The 'void' return type means that nothing will be returned from these</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> s<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#696969; ">// 'int' and 'double' are our parameter types which, along with the identifier,</span>
+<span style="color:#696969; ">// form the signature that the compiler uses to find a function.</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> n<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">double</span> d<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+
+<span style="color:#696969; ">// We'll create one function with a return type, just to show it off</span>
+<span style="color:#800000; font-weight:bold; ">int</span> square<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> n<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#696969; ">// 999, 42.42, "Hello!", 10, and 1.5 are all considered arguments</span>
+    showInBox<span style="color:#808030; ">(</span><span style="color:#008c00; ">999</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    showInBox<span style="color:#808030; ">(</span><span style="color:#008000; ">42.42</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    showInBox<span style="color:#808030; ">(</span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">Hello!</span><span style="color:#800000; ">"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    showInBox<span style="color:#808030; ">(</span><span style="color:#008c00; ">10</span><span style="color:#808030; ">,</span> <span style="color:#008000; ">1.5</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Let's get 5 squared, should be 25, right?</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> sq <span style="color:#808030; ">=</span> square<span style="color:#808030; ">(</span><span style="color:#008c00; ">5</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// We could print with cout, but let's use our cool box function instead!</span>
+    showInBox<span style="color:#808030; ">(</span>sq<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Note that the main function returns 0, this is actually a code for the</span>
+    <span style="color:#696969; ">// operating system to use, it tells it that the program ended correctly!</span>
+    <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+
+<span style="color:#696969; ">// Definition for our square function</span>
+<span style="color:#800000; font-weight:bold; ">int</span> square<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> n<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#696969; ">// We "return" n * itself, or the square</span>
+    <span style="color:#696969; ">// This value will be used wherever the function call occured in main()</span>
+    <span style="color:#800000; font-weight:bold; ">return</span> n <span style="color:#808030; ">*</span> n<span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+
+<span style="color:#696969; ">// These are the definitions for the overloaded functions</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> n<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#696969; ">// Turn the integer into a string (because we can count the characters in</span>
+    <span style="color:#696969; ">// the string, useful for drawing a box!)</span>
+    <span style="color:#603000; ">string</span> var <span style="color:#808030; ">=</span> to_string<span style="color:#808030; ">(</span>n<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Get the number of characters in the string and add 2 (because the box</span>
+    <span style="color:#696969; ">// goes AROUND the variable)</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> size <span style="color:#808030; ">=</span> var<span style="color:#808030; ">.</span>size<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">2</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// This prints a string made of a number of dashes equal to size,</span>
+    <span style="color:#696969; ">// it's a pretty cool trick!</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Print the sides of the boxes with the variable in the middle</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'|'</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> var <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">|</span><span style="color:#0f69ff; ">\n</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Same as up above</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// All the other functions are pretty much going to look like this.</span>
+<span style="color:#800080; ">}</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">double</span> d<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#603000; ">string</span> var <span style="color:#808030; ">=</span> to_string<span style="color:#808030; ">(</span>d<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> size <span style="color:#808030; ">=</span> var<span style="color:#808030; ">.</span>size<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">2</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'|'</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> var <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">|</span><span style="color:#0f69ff; ">\n</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> s<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> size <span style="color:#808030; ">=</span> s<span style="color:#808030; ">.</span>size<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">2</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'|'</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> s <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">|</span><span style="color:#0f69ff; ">\n</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+<span style="color:#800000; font-weight:bold; ">void</span> showInBox<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> n<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">double</span> d<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#603000; ">string</span> var <span style="color:#808030; ">=</span> to_string<span style="color:#808030; ">(</span>n <span style="color:#808030; ">*</span> d<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> size <span style="color:#808030; ">=</span> var<span style="color:#808030; ">.</span>size<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">2</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'|'</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> var <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">|</span><span style="color:#0f69ff; ">\n</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#603000; ">string</span><span style="color:#808030; ">(</span>size<span style="color:#808030; ">,</span> <span style="color:#0000e6; ">'-'</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>
+<i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
 </p>
