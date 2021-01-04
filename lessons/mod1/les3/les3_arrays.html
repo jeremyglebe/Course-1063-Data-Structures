@@ -1,0 +1,103 @@
+<h1>Arrays, 2D Arrays</h1>
+<h2>Lesson 1.3</h2>
+
+
+<h3>Recommended Reading</h3>
+<ul>
+    <li>
+        <b>Book Section 8.9</b><br>
+        <i>Arrays as Function Arguments</i><br>
+        (page 550 in the 10th edition)
+    </li>
+    <li>
+        <b>Book Section 8.10</b><br>
+        <i>Two-Dimensional Arrays</i><br>
+        (page 560 in the 10th edition)
+    </li>
+</ul>
+
+<h3>Overview</h3>
+<p>
+    It's important to remember, when using arrays as function parameters, that
+    the function will not be aware of the size of the array. In cases where you
+    are <i>absolutely certain</i> that the input array will always be one size,
+    you could hardcode that size or use a global constant of some kind. However,
+    this is not ideal for most situations. Instead, we usually pass the size of
+    the array as a second parameter to let the function know how large the array
+    is.
+</p>
+<p>
+    2D Arrays are best thought of as grids or matrices. They consist of rows and
+    columns which contain whatever type the array is. You can also think of them
+    as an array of arrays. Creating and accessing 2D arrays just means adding a
+    second set of square brackets with the size/subscript. The standard model
+    for 2D arrays is that the first subscript is the row, and the second is the
+    column.<br>
+    <code>int matrix[NUM_ROWS][NUM_COLUMNS];</code><br>
+    <code>matrix[SOME_ROW][SOME_COLUMN] = SOME_INT;</code>
+</p>
+<p>
+    Using 2D arrays as parameters can be fairly complicated. For design reasons
+    that will become more apparent later in the class, C++ does not accept
+    int[][] as a parameter type. Instead, the second size of the 2D array
+    (number of columns) must be explicitly defined. If you <i>hate</i> this
+    syntax like me, don't worry, it will get better when we talk about something
+    called <b>pointers</b> later.
+</p>
+<p>
+    The best way to traverse a 2D array is to loop through it's rows and columns
+    in a nested for loop. (a for loop inside a for loop) The example code will
+    demonstrate this.
+</p>
+
+<p>
+    <b>Example Code:</b>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#800000; font-weight:bold; ">using</span> <span style="color:#800000; font-weight:bold; ">namespace</span> <span style="color:#666616; ">std</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> sumArray<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> arr<span style="color:#808030; ">[</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> numItems<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">int</span> sumMatrix<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> matrix<span style="color:#808030; ">[</span><span style="color:#808030; ">]</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">3</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> num_rows<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#696969; ">// create a 1D array</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> myArray<span style="color:#808030; ">[</span><span style="color:#008c00; ">5</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> <span style="color:#800080; ">{</span><span style="color:#008c00; ">7</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">6</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">5</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">4</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">3</span><span style="color:#800080; ">}</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// create a 2D array</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> matrix<span style="color:#808030; ">[</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">]</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">3</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> <span style="color:#800080; ">{</span>
+        <span style="color:#800080; ">{</span><span style="color:#008c00; ">1</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">}</span><span style="color:#808030; ">,</span>
+        <span style="color:#800080; ">{</span><span style="color:#008c00; ">9</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">6</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">3</span><span style="color:#800080; ">}</span><span style="color:#800080; ">}</span><span style="color:#800080; ">;</span> <span style="color:#696969; ">// This could be done as one line, but I think this is</span>
+                    <span style="color:#696969; ">// more visual and C++ accepts it!</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> sumArray<span style="color:#808030; ">(</span>myArray<span style="color:#808030; ">,</span> <span style="color:#008c00; ">5</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> sumMatrix<span style="color:#808030; ">(</span>matrix<span style="color:#808030; ">,</span> <span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> sumArray<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> arr<span style="color:#808030; ">[</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> numItems<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> sum <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;</span> numItems<span style="color:#800080; ">;</span> i<span style="color:#808030; ">+</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        sum <span style="color:#808030; ">+</span><span style="color:#808030; ">=</span> arr<span style="color:#808030; ">[</span>i<span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+    <span style="color:#800080; ">}</span>
+    <span style="color:#800000; font-weight:bold; ">return</span> sum<span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> sumMatrix<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> matrix<span style="color:#808030; ">[</span><span style="color:#808030; ">]</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">3</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> num_rows<span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> sum <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Traverse the rows, which we can have any number of</span>
+    <span style="color:#696969; ">// I just named the variable r for "rows", it's common but not essential</span>
+    <span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> r <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> r <span style="color:#808030; ">&lt;</span> num_rows<span style="color:#800080; ">;</span> r<span style="color:#808030; ">+</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// For each row, we need to traverse each column so we can access all</span>
+        <span style="color:#696969; ">// For now, we just have to assume the matrix will have 3 columns. :(</span>
+        <span style="color:#696969; ">// This will be better later...</span>
+        <span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> c <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> c <span style="color:#808030; ">&lt;</span> <span style="color:#008c00; ">3</span><span style="color:#800080; ">;</span> c<span style="color:#808030; ">+</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span>
+        <span style="color:#800080; ">{</span>
+            sum <span style="color:#808030; ">+</span><span style="color:#808030; ">=</span> matrix<span style="color:#808030; ">[</span>r<span style="color:#808030; ">]</span><span style="color:#808030; ">[</span>c<span style="color:#808030; ">]</span><span style="color:#800080; ">;</span> <span style="color:#696969; ">// Item at row r and column c in the matrix</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#800080; ">}</span>
+    <span style="color:#800000; font-weight:bold; ">return</span> sum<span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>
+<i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
+</p>
