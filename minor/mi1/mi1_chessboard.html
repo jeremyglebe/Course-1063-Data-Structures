@@ -1,29 +1,46 @@
 <h1>Printing Chess Board</h1>
 <h2>Minor Program 1</h2>
 <p>
-    <b>tl;dr</b> Students will use structs and 2D arrays to print a
-    text model of a chess board.
-</p>
-
-<p>
-    Students will create a program which will define and print structures that
-    may be commonly found in a game of chess. (Pieces, board) These do not need
-    to be extremely functional as we are not making a game. (just printing the
-    board)
+    <b>tl;dr</b> Using functions and a 2D array of characters, students will
+    create a program which reads input from a file representing a chessboard and
+    prints that chessboard to the terminal.
 </p>
 <p>
-    There must be 2 structures, a board which contains a 2D array and a
-    chess piece, and a piece which contains a symbol representation and
-    position. There must be two functions, a new piece function which accepts a
-    symbol, row, and column and returns a chess piece, and a print board
-    function which accepts a chess board and returns nothing.
+    Student will create a program which prompts the user for an input file path.
+    The input file will contain 64 characters representing a chess board. The
+    characters read in are in order from left to right, top to bottom. Below is
+    a reference to what characters represent what pieces in the input.
+<pre><code>'0' -> Empty Space
+'K' -> King
+'Q' -> Queen
+'B' -> Bishop
+'N' -> Knight
+'R' -> Rook
+'p' -> Pawn</code></pre>
 </p>
 <p>
-    The students should print a few example boards/pieces, but I should easily
-    be able to make and print my own in just a few lines. (see
-    <code>main()</code> in the starter code at the bottom)
+    Students programs will contain the following functions:
+<ul>
+    <li><code>promptUser()</code> <i>will print a prompt for the user, get their
+            input file path, and return the path as a string.</i></li>
+    <li><code>readFile()</code> <i>accepts a file path and a 2D array (2D arrays
+            are automatically by reference) and populates the 2D array with
+            characters from the file. It returns nothing.</i></li>
+    <li><code>printBoard()</code> <i>accepts a 2D array meant to represent a
+            chess board and prints it to the terminal.</i></li>
+</ul>
+<p>
+    Even though the file does not contain characters which distinguish black and
+    white spaces, the function should print non-piece spaces in a chessboard
+    pattern. (where spaces alternate between black/white) Take some time to
+    consider this, there is an easy mathematical approach.
 </p>
-
+<p>
+    Students can assume that all input files will contain exactly 64
+    non-whitespace characters. Additionally students may assume that each line
+    will contain exactly 8 non-whitespace characters and each line will end with
+    a newline character. (for a total of 9 characters per line)
+</p>
 <p>
     <b>Small Note:</b> I'd really like it if students would use special ascii
     characters that resemble chess pieces (see starter code) but I know that
@@ -33,96 +50,65 @@
 </p>
 
 <h3>Topics Required</h3>
-To complete this assignment, students will need to understand C++ functions, 2D
-arrays. Students will also need a basic understanding of structs and how to use
-them for aggregate (heterogeneous) types.
+To complete this assignment, students will need to understand C++ functions and
+2D arrays.
 
 <h3>Purpose</h3>
 Students completing this assignment will have reviewed and demonstrated earlier
 concepts from CS1, ensuring they are ready and able to move on to more advanced
-topics. Students will also have learned and demonstrated basic usage of structs,
-which is foundational to objects and critically important to the rest of this
-course.
+topics.
 
 <h3>Starter code for copy/paste:</h3>
 <pre style="color:#000000;background:#ffffff;"><span style="color:#696969; ">// Convenient way to use special characters, if your terminal supports it</span>
-<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> KNIGHT </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♞ </span><span style="color:#800000; ">"</span>
-<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> QUEEN </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♕ </span><span style="color:#800000; ">"</span>
-<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> DARK_BLOCK </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">██</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> KING </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♚</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> QUEEN </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♛</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> BISHOP </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♝</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> KNIGHT </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♞</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> ROOK </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♜</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> PAWN </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">♟︎</span><span style="color:#800000; ">"</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> DARK_BLOCK </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">▓▓</span><span style="color:#800000; ">"</span>
 <span style="color:#004a43; ">#</span><span style="color:#004a43; ">define</span><span style="color:#004a43; "> LIGHT_BLOCK </span><span style="color:#800000; ">"</span><span style="color:#0000e6; ">░░</span><span style="color:#800000; ">"</span>
 
 <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">fstream</span><span style="color:#800000; ">&gt;</span>
 <span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">string</span><span style="color:#800000; ">&gt;</span>
 
 <span style="color:#800000; font-weight:bold; ">using</span> <span style="color:#800000; font-weight:bold; ">namespace</span> <span style="color:#666616; ">std</span><span style="color:#800080; ">;</span>
 
-<span style="color:#800000; font-weight:bold; ">struct</span> ChessPiece<span style="color:#800080; ">{</span>
-    <span style="color:#696969; ">// Must include symbol (string, char?), row, column</span>
-<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span>
-<span style="color:#291111; font-weight:bold; ">struct</span> ChessBoard<span style="color:#800080; ">{</span>
-    <span style="color:#696969; ">// Must include a 2D char array and a ChessPiece</span>
-<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span>
-<span style="color:#696969; ">// Functions must be prototyped/forward declared</span>
-<span style="color:#800000; font-weight:bold; ">void</span> printBoard<span style="color:#808030; ">(</span>ChessBoard game<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-ChessPiece newPiece<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> symbol<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> row<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> col<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#696969; ">// Functions must be prototyped</span>
+<span style="color:#603000; ">string</span> promptUser<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">void</span> readFile<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> filepath<span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">char</span> board<span style="color:#808030; ">[</span><span style="color:#008c00; ">8</span><span style="color:#808030; ">]</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">8</span><span style="color:#808030; ">]</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">void</span> printBoard<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">char</span> board<span style="color:#808030; ">[</span><span style="color:#008c00; ">8</span><span style="color:#808030; ">]</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">8</span><span style="color:#808030; ">]</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
 
-<span style="color:#696969; ">// If your structs and functions are made correctly,</span>
-<span style="color:#696969; ">// you will NOT need to modify this main function</span>
-<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
-    ChessBoard board<span style="color:#800080; ">;</span>
-    <span style="color:#696969; ">// Board with a queen</span>
-    board<span style="color:#808030; ">.</span>piece <span style="color:#808030; ">=</span> newPiece<span style="color:#808030; ">(</span>QUEEN<span style="color:#808030; ">,</span> <span style="color:#008c00; ">4</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">3</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-    printBoard<span style="color:#808030; ">(</span>board<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-    <span style="color:#696969; ">// Board with a knight</span>
-    board<span style="color:#808030; ">.</span>piece <span style="color:#808030; ">=</span> newPiece<span style="color:#808030; ">(</span>KNIGHT<span style="color:#808030; ">,</span> <span style="color:#008c00; ">1</span><span style="color:#808030; ">,</span> <span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-    printBoard<span style="color:#808030; ">(</span>board<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
-<span style="color:#800080; ">}</span>
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span> <span style="color:#800080; ">}</span>
 </pre>
 <i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
 
 <h3>Example Outputs</h3>
 <b>Output <i>with</i> special characters</b>
 <pre>
+&ltInput File&gt: input.txt
   1 2 3 4 5 6 7 8
-1 ░░██░░██░░██░░██
-2 ██░░██░░██░░██░░
-3 ░░██░░██░░██░░██
-4 ██░░██░░██░░██░░
-5 ░░██░░♕ ░░██░░██
-6 ██░░██░░██░░██░░
-7 ░░██░░██░░██░░██
-8 ██░░██░░██░░██░░
-
-  1 2 3 4 5 6 7 8
-1 ░░██░░██░░██░░██
-2 ██░░♞ ░░██░░██░░
-3 ░░██░░██░░██░░██
-4 ██░░██░░██░░██░░
-5 ░░██░░██░░██░░██
-6 ██░░██░░██░░██░░
-7 ░░██░░██░░██░░██
-8 ██░░██░░██░░██░░
+1 ░░▓▓░░▓▓░░▓▓♞▓▓
+2 ▓▓░░♜░░▓▓░░▓▓░░
+3 ░░▓▓░░▓▓♛▓▓░░▓▓
+4 ▓▓♟︎▓▓░░▓▓░░▓▓░░
+5 ░░▓▓░░▓▓░░▓▓♟︎▓▓
+6 ▓▓░░▓▓░░▓▓░░▓▓♝
+7 ░░▓▓░░♚░░▓▓░░▓▓
+8 ▓▓░░▓▓░░▓▓░░▓▓░░
 </pre>
 
 <b>Output <i>without</i> special characters</b>
 <pre>
- 12345678
-1 0 0 0 0
-20 0 0 0 
-3 0 0 0 0
-40 0 0 0 
-5 0 Q 0 0
-60 0 0 0 
-7 0 0 0 0
-80 0 0 0 
-
- 12345678
-1 0 0 0 0
-20 k 0 0 
-3 0 0 0 0
-40 0 0 0 
-5 0 0 0 0
-60 0 0 0 
-7 0 0 0 0
-80 0 0 0 
+&ltInput File&gt: input.txt
+  12345678
+1  0 0 0N0
+2 0 R 0 0 
+3  0 0Q0 0
+4 0p0 0 0 
+5  0 0 0p0
+6 0 0 0 0B
+7  0 K 0 0
+8 0 0 0 0 
 </pre>
