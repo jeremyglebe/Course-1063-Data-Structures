@@ -1,0 +1,65 @@
+<h1>Structs Introduction</h1>
+<h2>Lesson 2.1</h2>
+
+<h3>Recommended Reading</h3>
+<b>Book Section 7.12</b><br>
+<i>Structures</i><br>
+(page 459 in the 10th edition)
+Please note that the book may not be the best source here, as the section
+dealing with structs assumes you have knowledge of "classes". However, we will
+not address classes for some time. But, if you are eager for some reading
+material, this will still be a decent reference for struct syntax.
+
+<h3>Overview</h3>
+<p>
+    A <code>struct</code>, like an array, is an <b>aggregate</b> type, meaning
+    it's composed of multiple objects. The difference is that structs are
+    <b>heterogenous</b>, as opposed to homogeneous. This just means that while
+    arrays contain several objects of the same type, structs often contain
+    objects of different types.
+    <b>Strings</b> refer to groups of characters, such as words/names/sentences.
+    C++ does not have a built-in string type, but it does have a
+    <code>string</code> <b>class</b> that you can include through a header file.
+    (We'll see more on classes later)
+</p>
+<p>
+    Every object within a struct has it's own unique identifier. (As opposed to
+    arrays where they are identified by index number) These internal objects
+    function essentially the same as any other variable, but accessing them
+    requires the usage of the dot operator. Remember, the dot operator is used
+    on the <i>variable of the struct type, not on the struct type itself.</i>
+<pre><code>MyStructType variableName;
+MyStructType.internalObjectName = SOME_VALUE; // Bad
+variableName.internalObjectName = SOME_VALUE; // Good</code></pre>
+</p>
+<p>
+    The creation of a new struct type consists of using the struct keyword and
+    specifying the types and names of it's internal objects. (The internal
+    objects are sometimes called <b>data members</b>.) See the example code for
+    the struct syntax. (Don't forget semicolon at the end of structs!)
+</p>
+<p>
+    <b>Example Code:</b>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">string</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#800000; font-weight:bold; ">using</span> <span style="color:#800000; font-weight:bold; ">namespace</span> <span style="color:#666616; ">std</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">struct</span> BookType <span style="color:#800080; ">{</span>
+    <span style="color:#603000; ">string</span> title<span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">string</span> author<span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> id<span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> publishedYear<span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+    BookType frankenstein<span style="color:#800080; ">;</span>
+    frankenstein<span style="color:#808030; ">.</span>title <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Frankenstein; or, The Modern Prometheus</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    frankenstein<span style="color:#808030; ">.</span>author <span style="color:#808030; ">=</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">Mary Shelley</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+    frankenstein<span style="color:#808030; ">.</span>publishedYear <span style="color:#808030; ">=</span> <span style="color:#008c00; ">1818</span><span style="color:#800080; ">;</span>
+    frankenstein<span style="color:#808030; ">.</span>id <span style="color:#808030; ">=</span> <span style="color:#008c00; ">1122</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> frankenstein<span style="color:#808030; ">.</span>title <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+    <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> frankenstein<span style="color:#808030; ">.</span>author <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">, </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> frankenstein<span style="color:#808030; ">.</span>publishedYear <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#0000e6; ">'\n'</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>
+<i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
+</p>
