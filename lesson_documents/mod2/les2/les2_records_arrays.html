@@ -1,0 +1,47 @@
+<h1>Structs Introduction</h1>
+<h2>Lesson 2.1</h2>
+
+<h3>Recommended Reading</h3>
+<b>None</b>
+
+<h3>Overview</h3>
+<p>
+    Note on terminology: One term often treated as synonymous with structs is
+    <b>record</b>. While these are technically separate things, it is very
+    common to use structs to represent records. (Which are a more abstract
+    concept)
+</p>
+<p>
+    Records can contain arrays. When defining a struct we need only include a
+    data member of the array type. Elements of the array are then accessed
+    (somewhat intuitively) like so:
+<pre><code>MyStructType record;
+record.arrayMember[INDEX] = SOME_VALUE; // Where INDEX is an int</code></pre>
+</p>
+<p>
+    Similarly, the type of objects an array holds can be records/structs. They
+    are declared the same as normal, but with the struct's type name.
+    Ex: <code>MyStructType fancyArray[1000];</code> The way you would then
+    access the records data members is like so:
+    <code>fancyArray[INDEX].someDataMember = SOME_VALUE;</code>
+</p>
+<p>
+    For a quick experiment in giving yourself a headache, consider the following
+    defined types and variables.
+<pre><code>struct MyType {
+    int things[100];
+    string stuff;
+};
+// Later on, somewhere in main() or another function
+MyType ohNoArray[1000];
+// Now, to access array elements inside a MyType object...
+ohNoArray[10].things[94] = 0;
+</code></pre>
+Now the good news. You likely won't have to do anything like that for awhile. I
+just wanted to expose you to how crazy the syntax can get at times. Sorry to
+scare you.
+</p>
+<p>
+    <b>Example Code:</b>
+    <i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
+</p>
