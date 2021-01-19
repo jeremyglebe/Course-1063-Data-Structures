@@ -38,8 +38,13 @@
 <p>
     Students can assume that all input files will contain exactly 64
     non-whitespace characters. Additionally students may assume that each line
-    will contain exactly 8 non-whitespace characters and each line will end with
-    a newline character. (for a total of 9 characters per line)
+    will contain exactly 8 non-whitespace characters.
+</p>
+<p>
+    Depending on your method of reading input file, it is possibly you may
+    accidentally read newline characters as well. If you run into this issue,
+    simply compare to check for newline (ex: <code>if(ch == '\n')</code>) and
+    then discard/do nothing with that character.
 </p>
 <p>
     <b>Small Note:</b> I'd really like it if students would use special ascii

@@ -1,0 +1,109 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<h1>Function Terminology & Overloading</h1>
+<h2>Key Terms Reference</h2>
+<h3>
+    <table>
+        <tr>
+            <td>call</td>
+            <td>definition</td>
+            <td>identifier</td>
+            <td>parameters</td>
+            <td>body</td>
+        </tr>
+        <tr>
+            <td>return (or "return type")</td>
+            <td>arguments</td>
+            <td>void</td>
+            <td>prototype</td>
+            <td>overload</td>
+        </tr>
+    </table>
+</h3>
+
+<h1>Fill In The Blank (use keywords)</h1>
+<h2>
+    To execute a function I need to ____________________ it.
+</h2>
+<h2>
+    Overloaded functions share an ____________________ but do not share
+    ____________________.
+</h2>
+<h2>
+    Functions which return nothing are called ____________________ functions.
+</h2>
+<h2>
+    A ____________________ let's the compiler know what a function will look
+    like, before it's defined.
+</h2>
+<h2>
+    <pre
+        style="color:#000000;background:#ffffff;"><span style="color:#800000; font-weight:bold; ">float</span> sum<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">float</span> arr<span style="color:#808030; ">[</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> size<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span></pre>
+</h2>
+<h2>This line is a function's ________________________________________</h2>
+<h2>
+    <pre style="color:#000000;background:#ffffff;"><span style="color:#800000; font-weight:bold; ">float</span> sum<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">float</span> arr<span style="color:#808030; ">[</span><span style="color:#808030; ">]</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">int</span> size<span style="color:#808030; ">)</span><span style="color:#800080; ">{</span>
+    <span style="color:#808030; ">.</span><span style="color:#808030; ">.</span><span style="color:#808030; ">.</span>
+<span style="color:#800080; ">}</span>
+</pre>
+
+</h2>
+<h2>These lines are a function's ________________________________________</h2>
+<h1>The following images are assumed to be in main()</h1>
+<img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN8AAAAUCAYAAAAN1uhbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUjSURBVHhe7Zvfax1FFMf9R3xQsU/6FJ/EFLQqiLQhUoLggxUqfVEsNZUqCAo2GKtoLVh/BBPaxEZqrVHbxkabatOmaYI30dAo5H8Z+1n5Xs6dO7v35u7uzaaZhw+7M+fMmcmd871zdpPcc+8DPS5SXXbsPux29B2JbAXu7NX3588lhPbSJ4qv4gQ3OVJZChNf74GP3cDI7YT+4/PuwUeeSeCevr0na+7hJ/cFx0aKIbTBZfHByHl3Y3HZPXVgOGiP/M/zb5xIPieuvq0Q8SGq/k9vpooLEe45drVw8RGPuMQP2bcb/uaWxeEPx93K6u3kGrJvJ/YPfeSmFs+4C39O1vny4miDz/jUb8EvqkLE1/Pc6+7ZoWl330M7g/Yovu5gN7YsSCASiYQK2bcbiG/08pjbuf+doF388vtC02dWiPgoOTsV39NvfVsvV/3SlHjElV1zEE/lrKXd0vaxx/e4S9Mz7t33jrmFW4tudXU1ufbtfbHuw71scOXK1WQcNsbZNr7X5q67Vw++mdiIjb1WW3YnPvsquVr/smBDd738vpudW6iv+9ZSzQ0MHk9sQ5+fTWz40KZ/7uaSOzQ8ltxj++7ibDLum6mZpF1bXkns+ENauanxzMEYYti5AJvWBbRl++nyH2707HSCb9fPRBs/bP660mKzLj4DO1eor1PaFR9VwlLt74byU+I7OPi2W1tbc6dOTwb3FZrEZ4VjQYzWL018vmhp63mR9qP7jtbHSIg2NrZOTj5EIHEgGLVHvj5d95n68UJD29JKfGw+V2Ig4FdeO1K3+7GKhA0leUlQbbCFZLOC8MVHQjJWicxVolCM0Dc4aLzE7ic47YkfZur+9MuXtkSltTOn1irxYdda8JNvO7HlG7LnoV3xqWLgy0t9ucQnOjn5dHpRsqpPArN9FuZB8GrnFR8CUR9CQyxqc592WrUSn2wSsLX7sXzYgPX19SaGhj8J+lvYUJIzLbFIuizx6d76kbRK+FACCTtefXasj++Pr10b/djxk/h8AVl/ix/bxqKdta6N4j/znZufcLsPHQ36+l9cEl9oL30KF5/f54sPG6WkPVW7JT758G2rk0y2MsWXB20qyaV12yTLKz5KJl60dCo+uy6wpWOWICQ+1hWyQ1ZsO551ci8hFs3wmS9SBYjwEKDamyo+/+Szfbq3ZWY3Tz4LoqFElX+Z4st78llIME5BJXVe8eU5+bjaE9n3zyO+VrHlwxzE4Kr+ouEknLw2HhRfZU4+QEh2nI3ji1OnoBWf79MuGxUf4uHZzYpPL2gUS8+PecWXB7vRoKRVUpN4SlLZdELYhE0TH2Q987USn2LKVtTJ1yo2aH3+GgUvRNb++Tf4MqldeO4bnz3V9KsGaOeZ79L0r8F9hQ2LD1HYkhH8N5KISTaEZE8x4lrbrsGxBvGBnWMjbzuzxCex2TIGu3wBX9l4o1mFslNJatdNItokoC3byYmf68nYrvhIHkpP/5fGrcSHHeFrbt6qWn9/Hksr8bWKLZjDitQicYR+tiwoM+3v+GiH/LLedvYPvORWVv5K4D60t6nii1QDu9lloSQNnX5VJ0vgwKme5+TLIlQxSHy9T/S56zfmOzv5ItXAbmyZbMW/cLElt2/jNOe5uizhIbpQbImPubOEB1F8Faeb/9VAwpaVrEWC6ChF/WfAbkGZyefUVMrG/2q4u7i/94XGDY5UFvYqiu8uIxFg/L++6nJnb9gj9iqKLxLZAkTxRSKbRBRfJLIp9Lj/AIVtMD3ogA8qAAAAAElFTkSuQmCC">
+<h2>The highlighted code above is a ________________________________________</h2>
+<img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO4AAAAZCAYAAAA2eRKDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVTSURBVHhe7Zvba1xVFMb7j/igYolgn+KLYIR6g1La0BJK0QcVlD4ViraiBRFBo2mlmhZvGC+YFqxtjVXUVGsTNUlNE52khkYh/8s2v61rXLOz58y5zOXMzHr4kZyz9jlkvv19Z+3Zmdl2252DzjCM7sKCaxhdyLaBgQGXROyifuGOocfd9j3H3PbhFwwjPZuewTt46MupS57QW0Wx4NbBhzY2KYaREjxkwW0z1mmNwmx6yILbZqITYRgZ6Xhw77p3l9s3ft3tHp12t9/zQM1NeoHRsbfd/MJ1N/TgsD8W4Xcev+QOTNxy9x3+qGZCupljb55163/97TY2NjwnJqZq6ld+XqzW+F3XmsGu16+6kQ9uusGnT0frneLZsU9dZWXVffPDL9F6HiS4eGvfgae2+C4vbQnujoefdHtPzvp7xOqd5sjRl9zq6k3/U86J8EWCi0G5PlbrJAR3ufKnO/j8mWhdOHv5p1IF9+6Rl92eU/Mte4i2MrifTX5e0xiK0palcpmDi5AIirD6fGwSsmLBbS6tDm4rkODiqe+nr27xWV5SBXfo0Fu+68Cjx8/X3IAw0oUH9z/nRt6r+DHSlaVLy7UC4wizvk89hkeecIs3ltza2prn2rVZd//Ovb72yqsna44Z++vcvDt85EX/O7UvLk756ybPnffHlcqKr8v9wyWysOOx19z+d/749++NdAcCCYRTXpcYSrp0CGP1PZIYff9C9TUDx1KjI3xyYdoT1h965g03M7fojxlHjS5CN5HrOxVcNERLtEBbNJYaodx9YtZrKLrrMVpnTdoHo+giet1Y3vTq0fFqXbQCdNXXhnMB3It7yhg9F/reOris6JaWfo8umQn0+vp6zaoviUwdlwDHgks4gd/lmCDLmCId9/LX37qJjyejtUbBJfBczzgE5Wd4v3pPQZkQjDM8vhgNrjYOP+kGGFDG5O24TPq5r36sHmMcbQYxmSzpMI0YSRtUDMg4GQud7rhoiaZhcNFPHpJyrPUr0nHRQmtQD8aEwdWg75WZhZoHYTg/ej50cGV1R7MI/daR4BJK3UEZw1g5LhpcHU5No+DK73qcDm6SkDIpScHVHTRmxrzBDcEQc78tV82CufQTn/PUGSfB1SbFWHp8mYOrQxlqXDS4YZeN0Si41MI616CxHOv50sGFZi2XSx9cwkboZBlCCKVWNLgsWdiUKmNwMYO8ZtDL3SRzSXC1kUL6MbigNa2nX5K26E+3lQcgiN56rkDmKwwuoSW82mt5KH1wNYSQ96gS3qLBLWvHxTi6O8Q6rgX3//tlBT3RN6ZhPW3RNVwiy/kkvbu64zImfN+bB8LI+1YdXI45L51ZNp/SBBeKvMdtFFzGYDQMJ+fSgHH00hYzlanjcj3/B15YWnGPHBrbUm9E3uACx+G5rIhGWYKbpDnn6y3DdXCTGgUe5P/msVqMhsFld5hd4nA3TwKcJrhAaOXatLvKElS9BNGhA4IotTPvfpip4wJCsVwOd/owkH69/u9Wu8tpgitmlOvTGk46gryui9/NlKrjElZCu7p2q+E9NGim9QTZOU4bXMbKrjMwRtdjiCaiJ6Ch1EO9BdEYLcNauFPPWF2XB68ObtKuMj4kuGmX0Zk6bi8iT8Gw68qE9CLNWCpzPm/H7Sd0cJOWyYSaXeWmddzYRb0GotX75FQvUiS4fDySzmChTYcEl8DSIGgU2nvSOLIsk8GC+x+IpoXt5W8HyXtUzALt/qxy36C+HYS3OvJZ5X7Dvo9rFMW+j9shfHjte7lGVjY9g3fwUMuCGztpGEa5seAaRhdiwTWMLsSCaxhdx6D7B2P+E0uxwP9ZAAAAAElFTkSuQmCC">
+<h2>The highlighted items above are the function's
+    ________________________________________</h2>
+<img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANkAAAAUCAYAAAAAyJgcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUfSURBVHhe7Zvfax1FFMf9R3xQsU/6FJ/EFLQqiLQhUoLggxUqfVEsNZUqCAo2GKtoLbT+CCY0CU1ta6zSGltpqk2bpqneREKjkP9lzGfhu5ydu3d27717Q+rOw4fdmTN7ZnZyvnvObpIHHnykz0Uilof7X3E7dh92OwaO1JfN+2cf2I8fZi8k+PtUliiySIZEYHlBV1PYjyiySKXUPoP5bO5HFFmkUnIDreZULrL+A5+7obF7CYPHF92jT7yQwDl9e0813OPP7stcE7l/GRn9wt28tej6nxlI2nlBVnckMvZpcOi1pj0sIiMyxDP45e2WIkJse45dr1xk+MMv/vPskd5wcPh9t7r6d3JUX16Q1YH9I5+5i8tn3KW/ZlK+uTye2CSy05MzmQdSWTIi63vpbffiyJx76LGdmUEiiuz/A4FCwBA4tt8PvrqAyMavTLid+z9osklk7M8vc7817VkRGZFRKnYqsuffO5uWmX5JiT/8yq458Kcy1FK2JH3q6T2bN33VffjRMbd0Z9mtra0lx4G9r6ZjOJcNrl27nlyHjetsm7E3Fm66Nw++m9jwjb3RWHEnTn6bHO34XsIczKV12/sKrZtzbN+fn02um5w+m94Ddvn3y0QxNHzczS8suZGvzrnGymrig/au1z9Ogw6b1gW0Zfv5yh9u/Nxcgm/Hh3wzDhtzHBqdKPTNuu7cbWTmyuvrlLIiI+svL/+ZWzZiW19fbxJhIjIrEAuis4NbicwXJ229z9F+ct/R9BoJzvrG1kkmUyAqgNQe+24yHXPxp0uZtqVIZPyQOeKDIH/jrSOp3fdVNayZefNsRSJjrVzr34Pdh1ZPZAUucO4HMu3pH6+mAUi/xtKWeDjSRmwSqUSGnX6N19gyvjU2z94NZUWmCoCHlL93QZGJTjKZshGlpvokJNtnYR6ErXa3IiOI1OcHJ+c2IC2hYLU2Bai1+7582OiNjY0m8n44eTCfn5VFaN1F98D4UKAQsAu372ayC4EtUfj44xlrMx/92BknkflCseMtvm/ri3ZoXe3iv5NdWJx2uw8dTWxWZNBuyViJyPw+X2TYKAFtltwqkWkMT0891WULBWtegLYjsipgXq1bAoHQusuIjFKHDx6dioy21gW25AsFvkSmrJhHyLe9nnVyLsFVzeiZr1Oh+SJDYAjN7luInmQy26dzWx5uZSazEHiUlhofCta8AG1HZN1mMgvzktUkktC6y4ism0zG0ZZo/vhuRFbkW2OYAx8c1V81ZLaZG1O5ItvyTAYIxl5n/fgiVFazIvPHlKVdkSlYNZ6jSjL50vtdXoDaAPZ99xKtzYqs1brLiAxC72RFIrPlHbaqMlmRb9D6/DWKw59OufV//nW3llfccwdGm+xl4L1sav500yd89if0gNI7mZ/lSomM4LelHvhfABGNbAjGZiX8Wtuu4YmMyMDO0c7XRYJIogErMonKlh820ICxsvEFMRSgWyUy3Zddt+5JtFp3WZERJJSM/leyIpFhJ9to7vOX5zPjuxFZkW/BHFaMFoSFwFbX7rmX3znRZG8F5aH9HRlt2azIQl8XVYb7+5oRWaQ+6InsZzMbeNuVkJDh19+XuspkPlZkoVJRexrMZJF6wVP5fvuLD7Jgq8/2n4zNJu+9VQoMJDLEhYgQk91HwMbcvsAgiqzmUDbawNmuf4WPuCgh/Xe0nmP+Cp99yisTi4gii2SI/0+WJf4/WaQnJEKr+/+Vbd4/+8B+RJFFItuaPvcfNZDHNoir0gIAAAAASUVORK5CYII=">
+<h2>The highlighted items above are ________________________________________
+</h2>
+<img
+    src="data:image/png;base64,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">
+<h2>The highlighted item above is the function's
+    ________________________________________</h2>
+<img
+    src="data:image/png;base64,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">
+<h2>The highlighted code above is the function's
+    ________________________________________</h2>
+<img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAAaCAYAAAAe23asAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATeSURBVHhe7Zvdi1VVGIf9R7qoEAapq0kESSkLYciUkYOX9gldJYLRFwgVIZSBCkFeiFQSZPY1kSYlg+PHSA2WytDczP+ymmfDb3rPu999Zu+zPTr7zLp42Huv913r7LXWs9dZ58yZTY88PpkymXEhC50ZKzZNTEwkESWsByZ3TqdtvSNp+6ufpu2vfbaxWRkDxoIx+fGnHwqiMduodELoQuZocjcwjEkWukwnhM4rc8DKmGShy3RD6GhCM1nogJEIveONE+nAmX/T5P4jYVzsfv98kRvFLNFker6ZmU2XZufD2Ljihf763Lfpt8tX+sYO6s7Hg2T6wCvp5vyt4hjFhyULXQPaXlxc7GNufiH13j4d5luOfn4h3bl7r68u7UW5TbFCH/vkZLq78jqRIG2ErjtHw8ADiNQ7du0L48PwULccXVuheY26IguEXrh9pzhG122Q0EiMzEgdjV8bRik08I6C2FFsGPqE5gmePnUrbX5qajXBlz35/Mup98U/xRMPdFi55JBLOTnkKgaPPrEzvXDs8mpdaCL0ia9+rVzpJDQoTr7ir3/0ZSGSYhITseb/+ruIKxeo6+WNhOb8yrU/i3y1z1HteYHJpw17b7Sr+wLFqMPqbvtJ/9S+hK7aaqw1H4w9MIeaD63ilKvMYud7EGfOniuY+eXiar8+/Ph4Ke/wW0fTwsLt8J2F2NLSUiPh+4TWANi3JnWYcx/XtZeS8r3Hr5YGkHbsgHDu60YwkUwg4lWtbJJCk2/lk0SK6Ro5qtptIjRliEcb/rUos0JztA+QHgR7rbb8tc+V0LxtD1qdq+ZD0moOOLLgsPAop+4ceZCZ+eCo69nZq+npZ/f25bHdqLr/1kJTwM1LOjo29cHPqwMRdRi5fVk0gJxTRkxlTYVmMiWKh3K75bDieBFs/J2T54sVlmtbx7cHg4TmNWye6tKm30Mr18svqGvLOOce/etIaFY4Jj8aOxgktF1g2syRR6uzrt88/F66fuNm2td7qS8P7ue2oyS07RTnCC1Z/QDAgxIarBxeUCuRcq3QXkQbpx45Z7//ozgnRnteNK6HEZp75cg1r6cHM6oLXmjl2f6BhGb/3GWhq7ZMw1ASGjERFFHpiO0M517eqGxUQluYcCu1lQi80P4BsGXUvXBprqhvxfaikddWaBtXXa4Vi8rI5f58eV6hy5SEBjrwzKHTRWds5+gwHy78HlrXIhpAn8tr2P3bIDSBFi+plQis0ECuZPDScJz5/Ub67uJckau3dyuh8ihvI7TuRfnk2n74ftlr35aEbrOHXktocvyCVYe6QtfZQzdZvUOhJZ/trJDU+tRrhURWlQv76drG9eTXFZqJtftQ+8EJrERATEJzLZFU3+aqbUlGzEpF26onJHYdof0emrhyla+Y7Ze/L6Bd5UhoVrfo+9y15qOO0HrHVv3IiYi6QiNt1bcc+jqy6vv1iFDo9YYmM9OPhB7l99CjZtB2Q6t36xV6vRFNZuZ/oRkjZG6ykq0Hqt5ZFFteXm78YbEbQudf25UJfm2HBE0FeFjw4CHz/X4AOyF0/j10mfx76JhOCJ3/Y8WwMgaMRf6PlZj8P4WZsSILnRkrstCZsSILnRkr1hT6xUO703MHd4Wxx7ZsTb13p9K2Pc3+LNo16D/jEMW6zPj1azL9BxRX+xADam9oAAAAAElFTkSuQmCC">
+<h2>The highlighted item above is the function's
+    ________________________________________</h2>
+
+<h1>Which code block shows correctly overloaded functions?</h1>
+<h2>
+    <ol>
+        <li>
+            <pre style="color:#000000;background:#ffffff;">
+<span style="color:#603000; ">string</span> prompt<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">int</span> prompt<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">double</span> prompt<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+        </li>
+        <li>
+            <pre style="color:#000000;background:#ffffff;">
+<span style="color:#800000; font-weight:bold; ">void</span> <span style="color:#603000; ">abort</span><span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> errorCode<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">void</span> <span style="color:#603000; ">abort</span><span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> errorMessage<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">void</span> <span style="color:#603000; ">abort</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+        </li>
+        <li>
+            <pre style="color:#000000;background:#ffffff;">
+<span style="color:#800000; font-weight:bold; ">void</span> notify<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> message<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">void</span> notify<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> text<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">void</span> notify<span style="color:#808030; ">(</span><span style="color:#603000; ">string</span> myString<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+</pre>
+        </li>
+    </ol>
+</h2>
+<h2>Answer Here: ________</h2>
