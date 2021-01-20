@@ -1,4 +1,4 @@
-animal body brain // This is the order of input lines, DELETE THIS BEFORE USING
+animal body_mass brain_mass // This is the order of input lines, DELETE THIS BEFORE USING
 28 // This is the number of animals in the file, DELETE THIS COMMENT (but not the number) BEFORE USING
 Mountain_beaver 1.35 8.1
 Cow 465 423
