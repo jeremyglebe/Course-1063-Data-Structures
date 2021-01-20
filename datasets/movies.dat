@@ -1,8 +1,5 @@
-// THE NEXT LINE IS THE ORDER/FORMAT OF THE DATA, REMOVE IT AND THIS COMMENT BEFORE USING FILE
-Film Genre Lead_Studio Audience_score_% Profitability Rotten_Tomatoes_% Worldwide_Gross Year
-
-77  // NUMBER OF LINES/MOVIES, REMOVE THIS COMMENT
-
+Film Genre Lead_Studio Audience_score_% Profitability Rotten_Tomatoes_% Worldwide_Gross Year  // This is the order of input lines, DELETE THIS BEFORE USING
+77 // This is the number of input lines in the file, DELETE THIS COMMENT (but not the number) BEFORE USING
 Zack_and_Miri_Make_a_Porno Romance The_Weinstein_Company 70 1.747541667 64 41.94 2008
 Youth_in_Revolt Comedy The_Weinstein_Company 52 1.09 68 19.62 2010
 You_Will_Meet_a_Tall_Dark_Stranger Comedy Independent 35 1.211818182 43 26.66 2010
