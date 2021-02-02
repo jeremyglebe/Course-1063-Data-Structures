@@ -1,0 +1,52 @@
+<h1>Pointers</h1>
+<h2>Module 3</h2>
+
+<h3>Topics</h3>
+<ul>
+    <li>Storing Memory Addresses</li>
+    <li>Dynamic Memory Allocation</li>
+    <li>Using Pointers</li>
+</ul>
+
+<h3>Lesson Overview</h3>
+<p>
+    Every variable is stored somewhere in memory. The location of a the
+    variable comes in the form of a hexadecimal number called an <b>address</b>.
+    (ex. 0x01FA4521) The syntax to get a variable's address is:
+    <code>&varName</code>
+
+</p>
+<p>
+    Variables which can store the addresses of other objects in memory are
+    called <b>pointers</b>. Pointers track two things: the address of some
+    object in memory, and the type of that object. (We need the type in order to
+    use the object later, so this makes sense!)
+</p>
+<p>
+    To create a pointer, we specify the type of the object it is pointing to, as
+    well as a special symbol to mark it as a pointer:
+    <code>int * myPointerVar;</code>
+</p>
+<p>
+    Additionally, we can "dynamically" create memory. (That is to say, create
+    memory without creating an identifier for it) To do so, we use the "new"
+    command: <code>new int(10)</code> "new" allocates new memory of some type,
+    and we can specify the value of the new memory in paretheses. "new" also
+    returns an address, which means we can store the address to that new memory
+    in a pointer: <code>int * ptr = new int(42);</code>
+</p>
+<p>
+    Remember that the value of a pointer variable is an address! If you want to
+    get the object that a pointer is pointing to, you must use the
+    <b>dereference</b> operator(<b>*</b>): <code>cout &lt&lt *ptr;</code>
+</p>
+<p>
+    Arrays are actually just pointers. They store the address of the first
+    element of the array. The subscript operator([]) actually just tells us how
+    many elements to jump ahead. (This is why the first item is 0, because we
+    don't need to jump ahead!) So, we can create arrays using pointers. (And we
+    can make those arrays dynamically sized!)
+<pre><code>int sizeInt;
+cin sizeInt;
+int * ptrArr = new int[sizeInt];</code></pre>
+</p>
