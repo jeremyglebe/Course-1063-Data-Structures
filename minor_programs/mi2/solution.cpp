@@ -124,6 +124,7 @@ int main()
     // CHANGES TO MAIN DO NOT SATISFY THIS REQUIREMENT.!!!
     const int TEST_SIZE = 15;
     DynArray cool(TEST_SIZE);
+    cool.print();
     for (int i = 0; i < TEST_SIZE; i++)
     {
         cool.geti(i) = 2 * TEST_SIZE - 2 * i;
