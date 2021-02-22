@@ -1,0 +1,165 @@
+<h1>Dynamic Array</h1>
+<h2>Minor Program 2</h2>
+<p>
+    <b>tl;dr</b> Students will complete a class that represents a "dynamic"
+    array, which can be resized via a method in the class.
+</p>
+<p>
+    Students will use the starter code provided and implement needed code to
+    make it work as intended.
+</p>
+<p>
+    Students will implement the class's constructor, making sure to initialize
+    all variables to reasonable values.
+</p>
+<p>
+    Students will implement the class's destructor, ensuring no memory leaks
+    occur.
+</p>
+<p>
+    Students will implement a method called <code>resize()</code> which will
+    "resize" the dynamic array by creating a new array of a specified size,
+    copying values over to the new array, and deleting the original array.
+</p>
+<p>
+    <b>Students will not modify main. Students will not remove existing class
+        data members.</b>
+</p>
+<p>
+    Further detailed instructions are found in the starter code.
+</p>
+
+<h3>Topics Required</h3>
+To complete this assignment, students will need to understand C++ classes,
+pointers, and dynamic memory allocation.
+
+<h3>Purpose</h3>
+Students completing this assignment will have demonstrated their knowledge of
+pointers, classes, and dynamic memory allocation.
+
+<h3>Starter code for copy/paste:</h3>
+<pre style="color:#000000;background:#ffffff;"><span style="color:#004a43; ">#</span><span style="color:#004a43; ">include </span><span style="color:#800000; ">&lt;</span><span style="color:#40015a; ">iostream</span><span style="color:#800000; ">&gt;</span>
+<span style="color:#800000; font-weight:bold; ">using</span> <span style="color:#800000; font-weight:bold; ">namespace</span> <span style="color:#666616; ">std</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">class</span> DynArray
+<span style="color:#800080; ">{</span>
+<span style="color:#800000; font-weight:bold; ">public</span><span style="color:#e34adc; ">:</span>
+    <span style="color:#696969; ">// Construct a dynamic array of size sz</span>
+    DynArray<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> sz<span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">IMPLEMENT THE CONSTRUCTOR, COMMENTS BELOW SERVE AS HINTS.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+        <span style="color:#696969; ">// Set the size</span>
+
+        <span style="color:#696969; ">// Create the internal "ordinary" array that holds our values</span>
+
+        <span style="color:#696969; ">// Initialize all values to 0 (0 is arbitrary, I just picked it)</span>
+    <span style="color:#800080; ">}</span>
+
+    <span style="color:#696969; ">// Function run when class is destroyed! (NO MEMORY LEAKS)</span>
+    <span style="color:#808030; ">~</span>DynArray<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">IMPLEMENT THE DESTRUCTOR, AVOID MEMORY LEAKS.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+    <span style="color:#800080; ">}</span>
+
+    <span style="color:#696969; ">// Function to resize the array!</span>
+    <span style="color:#800000; font-weight:bold; ">void</span> resize<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> newsize<span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">IMPLEMENT THE RESIZE FUNCTION, COMMENTS BELOW SERVE AS HINTS.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+
+        <span style="color:#696969; ">// If the new size is the same, the array doesn't actually</span>
+        <span style="color:#696969; ">// need to be resized</span>
+
+        <span style="color:#696969; ">// If new size is bigger, we grow the array (by creating a new one</span>
+        <span style="color:#696969; ">// and copying values)</span>
+        <span style="color:#696969; ">// Keep a (temporary) pointer to the old array, we'll delete it later...</span>
+
+        <span style="color:#696969; ">// Create a new array for _realArray to point to</span>
+
+        <span style="color:#696969; ">// Copy all the values using a loop</span>
+
+        <span style="color:#696969; ">// Since the array is becoming larger, there are new ints which</span>
+        <span style="color:#696969; ">// have not been initialized. They are at indices size to newsize-1</span>
+        <span style="color:#696969; ">// Initialize these new integers using a loop.</span>
+
+        <span style="color:#696969; ">// Now that we've copied the values, delete the old array</span>
+
+        <span style="color:#696969; ">// If new size is smaller, shrink the array (truncate extra ints)</span>
+        <span style="color:#696969; ">// Start off the same as growing, create a temporary pointer</span>
+
+        <span style="color:#696969; ">// and a new array</span>
+
+        <span style="color:#696969; ">// Loop through ONLY the values you are copying (remember, i=size is</span>
+        <span style="color:#696969; ">// out of bounds since the new array is smaller)</span>
+
+        <span style="color:#696969; ">// Make sure not to leave any memory leaks</span>
+
+        <span style="color:#696969; ">// Update the "size" data member of the class</span>
+    <span style="color:#800080; ">}</span>
+
+    <span style="color:#696969; ">// Get a reference to integer at position i</span>
+    <span style="color:#696969; ">// Reference means they can update the value and it will update inside our</span>
+    <span style="color:#696969; ">// class's array as well!</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#808030; ">&amp;</span>geti<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> i<span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">THIS FUNCTION IS ALREADY IMPLEMENTED. DO NOT CHANGE.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+        <span style="color:#800000; font-weight:bold; ">return</span> _realArray<span style="color:#808030; ">[</span>i<span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+    <span style="color:#800080; ">}</span>
+
+    <span style="color:#696969; ">// Get the current size (number of elements) the array has</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> length<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">THIS FUNCTION IS ALREADY IMPLEMENTED. DO NOT CHANGE.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+        <span style="color:#800000; font-weight:bold; ">return</span> size<span style="color:#800080; ">;</span>
+    <span style="color:#800080; ">}</span>
+
+    <span style="color:#696969; ">// Prints the array is a nice manner, with brackets and commas</span>
+    <span style="color:#800000; font-weight:bold; ">void</span> print<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">THIS FUNCTION IS ALREADY IMPLEMENTED. DO NOT CHANGE.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+        <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span>size <span style="color:#808030; ">&gt;</span> <span style="color:#008c00; ">0</span><span style="color:#808030; ">)</span>
+        <span style="color:#800080; ">{</span>
+            <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">[ </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> _realArray<span style="color:#808030; ">[</span><span style="color:#008c00; ">0</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+            <span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">1</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;</span> size<span style="color:#800080; ">;</span> i<span style="color:#808030; ">+</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span>
+            <span style="color:#800080; ">{</span>
+                <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; ">, </span><span style="color:#800000; ">"</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> _realArray<span style="color:#808030; ">[</span>i<span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+            <span style="color:#800080; ">}</span>
+            <span style="color:#603000; ">cout</span> <span style="color:#808030; ">&lt;</span><span style="color:#808030; ">&lt;</span> <span style="color:#800000; ">"</span><span style="color:#0000e6; "> ]</span><span style="color:#0f69ff; ">\n</span><span style="color:#800000; ">"</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span>
+    <span style="color:#800080; ">}</span>
+
+<span style="color:#800000; font-weight:bold; ">private</span><span style="color:#e34adc; ">:</span>
+    <span style="color:#696969; ">// The following data members MUST exist in the class. You must not remove</span>
+    <span style="color:#696969; ">// them. If you feel you need to, you may add additional variables.</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#808030; ">*</span>_realArray<span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">int</span> size<span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span><span style="color:#800080; ">;</span>
+
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#400000; ">main</span><span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>
+<span style="color:#800080; ">{</span>
+    <span style="color:#696969; ">// </span><span style="color:#ffffff; background:#808000; ">!!!</span><span style="color:#696969; ">DO NOT MODIFY MAIN. YOUR OBJECTIVE IS TO IMPLEMENT THE ABOVE CLASS.</span>
+    <span style="color:#696969; ">// CHANGES TO MAIN DO NOT SATISFY THIS REQUIREMENT.</span><span style="color:#ffffff; background:#808000; ">!!!</span>
+    <span style="color:#800000; font-weight:bold; ">const</span> <span style="color:#800000; font-weight:bold; ">int</span> TEST_SIZE <span style="color:#808030; ">=</span> <span style="color:#008c00; ">15</span><span style="color:#800080; ">;</span>
+    DynArray cool<span style="color:#808030; ">(</span>TEST_SIZE<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> i <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> i <span style="color:#808030; ">&lt;</span> TEST_SIZE<span style="color:#800080; ">;</span> i<span style="color:#808030; ">+</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span>
+    <span style="color:#800080; ">{</span>
+        cool<span style="color:#808030; ">.</span>geti<span style="color:#808030; ">(</span>i<span style="color:#808030; ">)</span> <span style="color:#808030; ">=</span> <span style="color:#008c00; ">2</span> <span style="color:#808030; ">*</span> TEST_SIZE <span style="color:#808030; ">-</span> <span style="color:#008c00; ">2</span> <span style="color:#808030; ">*</span> i<span style="color:#800080; ">;</span>
+    <span style="color:#800080; ">}</span>
+    cool<span style="color:#808030; ">.</span>print<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    cool<span style="color:#808030; ">.</span>resize<span style="color:#808030; ">(</span>cool<span style="color:#808030; ">.</span>length<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">/</span> <span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    cool<span style="color:#808030; ">.</span>print<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    cool<span style="color:#808030; ">.</span>resize<span style="color:#808030; ">(</span>cool<span style="color:#808030; ">.</span>length<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span> <span style="color:#808030; ">+</span> <span style="color:#008c00; ">3</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    cool<span style="color:#808030; ">.</span>print<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    cool<span style='color:#808030; '>.</span>resize<span style='color:#808030; '>(</span>cool<span style='color:#808030; '>.</span>length<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style="color:#800000; font-weight:bold; ">return</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>    
+<i>Formatted with: <a href="https://tohtml.com/">tohtml.com</a></i>
+
+
+<h3>Expected Output</h3>
+<pre>
+[ 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2 ]
+[ 30, 28, 26, 24, 22, 20, 18 ]
+[ 30, 28, 26, 24, 22, 20, 18, 0, 0, 0 ]
+Dynamic Array is already size 10
+</pre>
+<p>If this it not your output <i>then your code is wrong.</i></p>
