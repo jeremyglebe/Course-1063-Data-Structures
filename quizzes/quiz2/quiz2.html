@@ -1,0 +1,44 @@
+<h1>Name:_________________________________________</h1>
+<h2>Memory Modeling Quiz</h2>
+<h3>Demonstrating Allocation Concepts</h3>
+
+<p>
+    Draw a diagram/model demonstrating how memory is allocated after the
+    following statements are executed. It is important that you include all
+    variables declared, as well as memory addresses, values, and identifiers.
+</p>
+<p>
+    It is best you use the models we used in lecture, but if you don't remember
+    those then still answer the best that you can!
+</p>
+<p>
+    You can just make up the memory addresses, since those would normally be
+    assigned by the operating system. However, you must keep memory addresses
+    consistent! (Make sure the value of a pointer makes sense given the rest of
+    the model)
+</p>
+
+<pre style="color:#000000;background:#ffffff;"><span style="color:#800000; font-weight:bold; ">int</span> x <span style="color:#808030; ">=</span> <span style="color:#008c00; ">5</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#808030; ">*</span>ptr <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#800000; font-weight:bold; ">int</span><span style="color:#808030; ">(</span><span style="color:#008c00; ">2</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">bool</span> <span style="color:#808030; ">*</span>ptr2 <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#800000; font-weight:bold; ">bool</span><span style="color:#808030; ">[</span>x<span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">int</span> <span style="color:#808030; ">*</span>xPtr <span style="color:#808030; ">=</span> <span style="color:#808030; ">&amp;</span>x<span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">char</span> <span style="color:#808030; ">*</span><span style="color:#808030; ">*</span>ptrptr <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#800000; font-weight:bold; ">char</span><span style="color:#808030; ">*</span><span style="color:#808030; ">[</span><span style="color:#008c00; ">3</span><span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+<span style="color:#800000; font-weight:bold; ">for</span> <span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">int</span> r <span style="color:#808030; ">=</span> <span style="color:#008c00; ">0</span><span style="color:#800080; ">;</span> r <span style="color:#808030; ">&lt;</span> <span style="color:#008c00; ">3</span><span style="color:#800080; ">;</span> r<span style="color:#808030; ">+</span><span style="color:#808030; ">+</span><span style="color:#808030; ">)</span><span style="color:#800080; ">{</span>
+    ptrptr<span style="color:#808030; ">[</span>r<span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">new</span> <span style="color:#800000; font-weight:bold; ">char</span><span style="color:#808030; ">[</span><span style="color:#808030; ">*</span>ptr<span style="color:#808030; ">]</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+</pre>
+
+<h2>Additional Notes</h2>
+<h3>I printed like 40 copies before I realized I should have included these</h3>
+<p>
+    In addition to (and not instead of) writing addresses, you should draw
+    arrows from pointers to their objects.
+</p>
+<p>
+    You do not need to write the address of every element in an array, just the
+    first address.
+</p>
+<p>
+    You may use pointer shorthand for drawing the double pointer and it's
+    objects.
+</p>
