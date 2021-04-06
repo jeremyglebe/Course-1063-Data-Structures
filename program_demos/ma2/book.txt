@@ -1,0 +1,56 @@
+7
+
+3
+You are a simple farmer who lives a simple life.
+But today, when you awoke and left to tend your fields, a $DRAGON was flying overhead!
+In a panic, you-
+3
+Continue tending your fields. (But with URGENCY)
+1
+Throw the nearest rock at the $DRAGON.
+2
+Run for town, someone needs to warn them!
+3
+
+2
+The $DRAGON notices you tending your fields.
+It swoops down and murders you on the spot.
+1
+Ouch.
+6
+
+3
+You pick up the heaviest rock you can find.
+You throw it at the $DRAGON with all your might.
+It hits the $DRAGON, who spirals down to the ground with a crash.
+2
+Approach the $DRAGON.
+5
+Run towards town, someone needs to warn them!
+3
+
+2
+The $DRAGON catches up to you as you flee to town.
+It opens its maw, preparing to snatch you up!
+2
+Hurl a rock into its open throat.
+2
+Keep running. (But faster)
+4
+
+2
+The $DRAGON catches, (over)cooks, and eats you.
+You are nothing but a burnt piece of failed hero.
+1
+Ouch.
+6
+
+3
+You care for the wounded $DRAGON, befriending it and explaining to it
+that eating villagers is wrong. You become the most badass heroes of all time.
+~You Win!~
+0
+
+1
+<You Have Died!>
+0
