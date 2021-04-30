@@ -1,0 +1,47 @@
+PSEUDO-CODE FOR ALTERNATE MA2
+(ASSUMES YOU HAVE A WORKING STACK)
+
+MAIN
+	// Creating a special feature via persistent variable
+	STRING FAV_COLOR
+	PRINT("What is your favorite color?")
+	GET_INPUT(FAV_COLOR)
+
+	STRING BOOK[10]
+	BOOK[0] = "Time for an adventure. To run away scared, go to page 9. To begin your journey, go to page 1"
+	BOOK[1] = ...
+	...
+	// Utilizing the special feature
+	BOOK[4] = "You see a beautiful " + FAV_COLOR + " flower... Go to page 6 to smell it. Go to page 7 to step on it."
+	...
+	// Some ending
+	BOOK[9] = "YOU HAVE FAILED!"
+	
+	// Create a stack representing the user's path
+	STACK PATH
+	// Add the first page of the story to show the user
+	PATH.PUSH(0)
+	
+	// Variable for the user's input choices
+	INT USER_INPUT
+	
+	// Loop to show the user the book
+	WHILE(NOT PATH.EMPTY())
+		// Print the page marked by the top of the stack
+		PRINT(BOOK[PATH.PEEK()])
+		
+		// Get the user's choice
+		PRINT("Enter a page number to continue. Enter -1 to go back.")
+		GET_INPUT(USER_INPUT)
+		
+		// Check the user's input
+		IF(USER_INPUT == -1)
+			PATH.POP()
+		ELSE
+			PATH.PUSH(USER_INPUT)
+	
+	PRINT("Thanks for reading!")
+			
+// This code does not account for various small issues, like making sure the
+// user doesn't enter pages outside of the size of the array.
+// You will need to solve this in your actual code.	
